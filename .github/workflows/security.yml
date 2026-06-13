@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: aquasecurity/trivy-action@0.28.0
+      - uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'fs'
           scan-ref: '.'
@@ -70,7 +70,7 @@ jobs:
           load: true
           push: false
           tags: ${{ env.IMAGE_NAME }}:${{ github.sha }}
-      - uses: aquasecurity/trivy-action@0.28.0
+      - uses: aquasecurity/trivy-action@master
         with:
           image-ref: ${{ env.IMAGE_NAME }}:${{ github.sha }}
           format: 'sarif'
