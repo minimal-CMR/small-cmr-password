@@ -16,7 +16,7 @@ permissions:
   id-token: write
 
 env:
-  IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/small-cmr-password-backend
+  IMAGE_NAME: ghcr.io/minimal-cmr/small-cmr-password-backend
   BACKEND_PORT: 8004
 
 jobs:
