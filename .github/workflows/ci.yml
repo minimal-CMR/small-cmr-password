@@ -29,6 +29,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run pytest
+        env:
+          LOG_DIR: ${{ runner.temp }}/logs
         run: python -m pytest -q
 
   frontend-build:
