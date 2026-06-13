@@ -1,0 +1,13 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+*.db
+
+# Node
+node_modules/
+dist/
+
+# Claude
+.claude/
