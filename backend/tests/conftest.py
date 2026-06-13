@@ -7,6 +7,8 @@ if _DB_FILE.exists():
 
 os.environ["DATABASE_URL"] = f"sqlite:///{_DB_FILE}"
 os.environ["SECRET_KEY"]   = "test-only-secret-do-not-use-in-prod"
+# Chiave master 32 byte (base64) per AES-GCM nel vault — solo per i test.
+os.environ["VAULT_MASTER_KEY"] = "QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUE="
 
 import pytest
 from fastapi.testclient import TestClient

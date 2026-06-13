@@ -121,6 +121,16 @@ def get_password(
     return _to_list_item(p, current)
 
 
+@router.post("/vault/unlock", status_code=204)
+def unlock_vault(
+    payload: RevealRequest,
+    current: User = Depends(get_current_user),
+):
+    """Verifica la password dell'utente per sbloccare l'accesso al vault."""
+    if not verify_password(payload.user_password, current.password_hash):
+        raise HTTPException(status_code=403, detail="Password errata")
+
+
 @router.post("/{password_id}/reveal", response_model=PasswordReveal)
 def reveal_password(
     password_id: int,
