@@ -1,17 +1,17 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import vue from '@vitejs/plugin-vue';
 import federation from '@originjs/vite-plugin-federation';
 
 export default defineConfig({
   plugins: [
-    react(),
+    vue(),
     federation({
       name: 'password_module',
       filename: 'remoteEntry.js',
       exposes: {
-        './PasswordsView': './src/pages/PasswordsView.jsx',
+        './PasswordsView': './src/pages/PasswordsView.vue',
       },
-      shared: ['react', 'react-dom', 'react-router-dom', 'axios'],
+      shared: ['vue', 'axios'],
     }),
   ],
   server: {
