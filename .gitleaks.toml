@@ -1,0 +1,9 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Test fixtures contengono secret di test (incl. VAULT_MASTER_KEY dummy)."
+paths = [
+  '''backend/tests/.*\.py$''',
+  '''backend/tests/.*\.db$''',
+]
